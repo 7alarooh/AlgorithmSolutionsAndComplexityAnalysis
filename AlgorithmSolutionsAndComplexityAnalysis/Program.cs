@@ -48,7 +48,7 @@ namespace AlgorithmSolutionsAndComplexityAnalysis
             ///the best way
             ///
 
-            Console.WriteLine("enter the n of numbers to random: ");
+            Console.WriteLine("enter the n of numbers : ");
             int n1 = int.Parse(Console.ReadLine());
             int[] numbers1 = new int[n1];
             for (int i = 0; i < n; i++) { numbers1[i] = int.Parse(Console.ReadLine()); }
@@ -73,6 +73,46 @@ namespace AlgorithmSolutionsAndComplexityAnalysis
                     Console.WriteLine(i);
                 }
             }
+
+
+
+
+            //            ////2. Find the Kth Largest Element
+            //Problem: Write a function to find the `k`th largest element in an unsorted array. Note that it is the `k`th largest element in sorted order, not the `k`th distinct element
+            //Example Input: `[3, 2, 1, 5, 6, 4]`, `k = 2`
+            //Example Output: `5`2. Find the Kth Largest Element
+            //Problem: Write a function to find the `k`th largest element in an unsorted array. Note that it is the `k`th largest element in sorted order, not the `k`th distinct element
+            //Example Input: `[3, 2, 1, 5, 6, 4]`, `k = 2`
+            //Example Output: `5`
+
+            ////the worst way to solve
+            ///
+            Console.WriteLine("enter the n of numbers : ");
+            int nn = int.Parse(Console.ReadLine());
+
+            int[] arr = new int[nn];
+            for (int i = 0; i < nn; i++) { arr[i] = int.Parse(Console.ReadLine()); }
+            Console.WriteLine("enter the number of K : ");
+            int k = int.Parse(Console.ReadLine());
+
+            int lengthArr = arr.Length;
+            for (int i = 0; i < lengthArr - 1; i++)
+            {
+                for (int j = 0; j < lengthArr - i - 1; j++)
+                {
+                    if (arr[j] > arr[j + 1]) 
+                    {
+                   
+                        int temp = arr[j];
+                        arr[j] = arr[j + 1];
+                        arr[j + 1] = temp;
+                    }
+                }
+            }
+
+            int kthLargest = arr[n - k]; 
+            Console.WriteLine($"{k}th largest element is: " + kthLargest);
+
 
         }
     }
