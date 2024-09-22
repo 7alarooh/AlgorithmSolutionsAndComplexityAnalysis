@@ -110,9 +110,22 @@ namespace AlgorithmSolutionsAndComplexityAnalysis
                 }
             }
 
-            int kthLargest = arr[n - k]; 
+            int kthLargest = arr[nn - k]; 
             Console.WriteLine($"{k}th largest element is: " + kthLargest);
 
+            ///the best way
+            ///
+
+            Console.WriteLine("enter the n of numbers : ");
+            int nn1 = int.Parse(Console.ReadLine());
+
+            int[] arr1 = new int[nn1];
+            for (int i = 0; i < nn1; i++) { arr1[i] = int.Parse(Console.ReadLine()); }
+            Console.WriteLine("enter the number of K : ");
+            int k1 = int.Parse(Console.ReadLine());
+
+            Array.Sort(arr1);
+            Console.WriteLine($"{k1}th largest element is: " + arr1[arr1.Length - k1]);
 
         }
     }
